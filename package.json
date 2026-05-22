@@ -1,0 +1,28 @@
+{
+  "name": "@glowing-fishstick/dshard-module",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Express plug-in module providing managed pools for 30 DSHARD MSSQL connections with diagnostics.",
+  "type": "module",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "files": [
+    "src/"
+  ],
+  "scripts": {
+    "test": "node --test",
+    "bench:sockets": "node --expose-gc bench/sweep-sockets.js",
+    "bench:pools": "node --expose-gc bench/sweep-pools.js"
+  },
+  "peerDependencies": {
+    "express": "^4.21.0"
+  },
+  "dependencies": {
+    "mssql": "^11.0.1"
+  }
+}
